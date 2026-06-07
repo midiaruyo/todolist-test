@@ -1,7 +1,8 @@
 const http = require("http");
+require('dotenv').config(); 
 const { v4: uuidv4 } = require("uuid");
 const errorHandle = require("./errorHandle");
-
+const PORT = process.env.PORT||3005;
 // Mock data
 // const todos = [{
 //   "title":"今天樂活",
@@ -151,4 +152,4 @@ const reqListener = (req, res) => {
 
 // start server on port 3005
 const server = http.createServer(reqListener);
-server.listen(3005);
+server.listen(PORT);
